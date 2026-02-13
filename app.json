@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Tollugatti",
+    "slug": "tollugatti-mobile",
+    "scheme": "tollugatti",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "android": {
+      "package": "com.tollugatti.mobile"
+    },
+    "ios": {
+      "bundleIdentifier": "com.tollugatti.mobile"
+    },
+    "plugins": [
+      "expo-router"
+    ]
+  }
+}
