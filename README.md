@@ -59,6 +59,24 @@ See `.env.example` for defaults.
   - `city`
   - `avatarUrl`
 
+## Discovery Feature
+- Home gateway tiles route to `/discover`.
+- Discover screen fetches and lists:
+  - `GET /api/games`
+  - `GET /api/events`
+  - `GET /api/tournaments`
+  - `GET /api/featured`
+
+## Bot Play Feature (Aaduhuli)
+- Route: `/bot-aaduhuli`
+- Implements documented bot flow:
+  - `GET /api/games/aaduhuli3` (list active matches)
+  - filter bot-ready matches (`players[1]` occupied, `players[0]` empty)
+  - `POST /api/games/aaduhuli3` with `action: "join"` as `playerID: "0"`
+  - `POST /api/games/aaduhuli3` with `action: "move"` for `placeGoat` / `moveGoat` / `moveTiger`
+  - `POST /api/games/aaduhuli3` with `action: "leave"`
+- Uses the same board heuristics as web (`BOARD_POSITIONS`, adjacency, tiger capture jump map) for client-side move validation.
+
 ## Project Documentation
 - Mobile implementation plan: [`MOBILE_PROJECT_PLAN.md`](./MOBILE_PROJECT_PLAN.md)
 - VS Code setup plan: [`VS_CODE_SETUP_PLAN.md`](./VS_CODE_SETUP_PLAN.md)
